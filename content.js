@@ -42,7 +42,8 @@ function extractNewImageUrls() {
     .filter((url) => url !== null && !seenImages.has(url));
 
   // 📌 새로 추출한 이미지 URL을 seenImages에 추가 (중복 방지)
-  urls.forEach((url) => seenImages.add(url));
+  // 여기서 이미지 몇몇개가 다운안되는 문제 발생.
+  // popup으로 넘겨주는 최종 collectedUrls에서 확인해주어야함.
 
   return urls;
 }
@@ -68,6 +69,7 @@ async function scrollAndCollect(limit = 100, timeout = 500, maxAttempts = 500) {
 
     // 📦 아직 수집하지 않은 URL만 추가
     collectedUrls.push(...newUrls.slice(0, limit - collectedUrls.length));
+    collectedUrls.forEach((url) => seenImages.add(url));
 
     // 🔻 500px 아래로 스크롤 => 스크롤이 얼마나 내려가는지에 따라 스킵되버리는 이미지도 생겨서 주의 필요.
     window.scrollBy(0, 500);
