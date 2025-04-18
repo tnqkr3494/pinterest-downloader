@@ -2,7 +2,15 @@
   "manifest_version": 3,
   "name": "Pinterest Image Downloader",
   "version": "1.0",
-  "permissions": ["activeTab", "downloads", "scripting"],
+  "permissions": [
+    "downloads",
+    "tabs",
+    "scripting",
+    "activeTab",
+    "storage",
+    "https://i.pinimg.com/*"
+  ],
+  "host_permissions": ["https://i.pinimg.com/*"],
   "action": {
     "default_popup": "popup.html"
   },
