@@ -5,71 +5,17 @@
     <title>Pinterest Downloader</title>
     <script src="jszip.min.js"></script>
     <script src="popup.js" defer></script>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #f9f9f9;
-        padding: 20px;
-        width: 300px;
-        box-sizing: border-box;
-      }
-      h1 {
-        font-size: 20px;
-        text-align: center;
-        margin-bottom: 20px;
-        color: #e60023;
-      }
-      button {
-        padding: 12px;
-        width: 100%;
-        background-color: #e60023;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-      button:hover {
-        background-color: #c4001d;
-      }
-      /* 로딩 화면 스타일 */
-      #loading {
-        display: none;
-        text-align: center;
-        font-size: 16px;
-        color: #333;
-        margin-top: 20px;
-      }
-      #progress-container {
-        display: none;
-        margin-top: 20px;
-      }
-      progress {
-        width: 100%;
-        height: 20px;
-        margin-bottom: 5px;
-        background-color: #e0e0e0;
-        border-radius: 10px;
-      }
-      #progress-text {
-        text-align: center;
-        color: #333;
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css" />
   </head>
   <body>
     <h1>Pinterest 이미지 다운로드</h1>
     <button id="download-btn">이미지 ZIP 다운로드</button>
 
-    <!-- 로딩 메시지 -->
-    <div id="loading">로딩 중... 잠시만 기다려 주세요.</div>
+    <div id="loading">스크롤 중입니다... 📥</div>
 
-    <!-- 진행 바 TODO: 이미지 변환 시간로딩 말고 스크롤 내리는 시간으로 로딩 변경 -->
     <div id="progress-container">
       <progress id="progress-bar" value="0" max="100"></progress>
-      <span id="progress-text">0%</span>
+      <div id="progress-text">0%</div>
     </div>
   </body>
 </html>
