@@ -61,7 +61,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         }
 
         lastScrollTop = currentScroll;
-      }, 1000);
+      }, 500);
     };
 
     scrollPage();
